@@ -1,4 +1,8 @@
+import { useState } from 'react';
+
 export const GiftExpertApp = () => {
+  const [categories, setCategories] = useState(['One Punch', 'Dragon Ball']);
+
   return (
     <>
       {/* titulo */}
@@ -7,8 +11,13 @@ export const GiftExpertApp = () => {
       {/* Input */}
 
       {/* Listado de gift */}
-
+      <ol>
         {/* Gift Item */}
+        { categories.map(category => {
+          return <li key={category}>{category}</li>
+        }) }
+      </ol>
+
     </>
   );
 }
