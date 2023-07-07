@@ -14,7 +14,8 @@ export const GiftExpertApp = () => {
       <h1>GiftExpertApp</h1>
 
       {/* Input */}
-      <AddCategory />
+      <AddCategory
+        setCategories={setCategories} />
 
       {/* Listado de gift */}
       <ol>
