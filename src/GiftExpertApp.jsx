@@ -14,12 +14,10 @@ export const GiftExpertApp = () => {
 
   return (
     <>
-      {/* titulo */}
       <h1>GiftExpertApp</h1>
 
       {/* Input */}
       <AddCategory
-        // setCategories={setCategories} 
         onNewCategory={event => onAddCategory(event)}
       />
 
