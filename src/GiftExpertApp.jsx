@@ -4,8 +4,8 @@ import { AddCategory } from './components/AddCategory';
 export const GiftExpertApp = () => {
   const [categories, setCategories] = useState(['One Punch', 'Dragon Ball']);
 
-  const onAddCategory = () => {
-    setCategories([...categories, 'Valorant']);
+  const onAddCategory = (newCategory) => {
+    setCategories([...categories, newCategory]);
   }
 
   return (
@@ -15,7 +15,9 @@ export const GiftExpertApp = () => {
 
       {/* Input */}
       <AddCategory
-        setCategories={setCategories} />
+        // setCategories={setCategories} 
+        onNewCategory={event => onAddCategory(event)}
+      />
 
       {/* Listado de gift */}
       <ol>
