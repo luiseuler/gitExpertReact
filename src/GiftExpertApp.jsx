@@ -1,10 +1,14 @@
 import { useState } from 'react';
+
 import { AddCategory } from './components/AddCategory';
+import { GiftGrid } from './components/GiftGrid';
 
 export const GiftExpertApp = () => {
   const [categories, setCategories] = useState(['One Punch', 'Dragon Ball']);
 
   const onAddCategory = (newCategory) => {
+    if (categories.includes(newCategory)) return;
+
     setCategories([...categories, newCategory]);
   }
 
@@ -19,14 +23,14 @@ export const GiftExpertApp = () => {
         onNewCategory={event => onAddCategory(event)}
       />
 
-      {/* Listado de gift */}
-      <ol>
-        {/* Gift Item */}
-        {categories.map(category => {
-          return <li key={category}>{category}</li>
-        })}
-      </ol>
-
+      {
+        categories.map(category =>
+        (
+          <GiftGrid
+            key={category}
+            category={category} />
+        ))
+      }
     </>
   );
 }
