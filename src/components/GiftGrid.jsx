@@ -3,10 +3,13 @@ import { useFetchGifs } from "../hooks/useFetchGifs";
 
 export const GiftGrid = ({ category }) => {
   const { images, isLoading } = useFetchGifs(category);
-  console.log(isLoading);
+  
   return (
     <>
       <h3>{category}</h3>
+      {
+        isLoading && <h3>Cargando...</h3>
+      }
 
       <div className="card-grid">
         {
